@@ -1,0 +1,44 @@
+header {
+
+
+    background: darkseagreen;
+    position:fixed ;  /* добавили */
+    top: 0;
+    height:130px;
+    width: 100%;
+
+
+}
+
+a {
+    text-decoration: none;
+    margin: 50px;
+    color: aliceblue;
+    padding: 16px 16px;
+}
+
+li {
+    display: inline-block;
+
+
+}
+
+.logo {
+    margin-left: 120px;
+}
+
+.div-nav {
+    width: 100%;
+    text-align: left;
+    background: #658565;
+    position:absolute; /* добавили */
+    bottom:0; /* добавили */
+}
+
+a:hover {
+
+    background: #466246; /* фон пунктов при наведении */
+    height: 100%;
+    width: 100%;
+
+}
