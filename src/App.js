@@ -1,12 +1,19 @@
 import React from 'react';
-import Header from "./components/Header";
+import Header from "./Header/Header";
 
-function App() {
-  return (
-    <div >
-        <Header/>
-    </div>
-  );
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+
+        return (
+            <div>
+                <Header/>
+                <h1>Курсfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</h1>
+            </div>
+        );
+    }
 }
 
 export default App;
