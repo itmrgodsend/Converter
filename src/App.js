@@ -8,9 +8,17 @@ class App extends React.Component {
     render() {
 
         return (
-            <div>
+            <div className='wrapper'>
                 <Header/>
-                <h1>Курсfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</h1>
+                {/*<h1>Курсfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</h1>*/}
+                <div className='main'>
+
+                    <ul>
+                        <li><a href="#">Курс</a></li>
+                        <li><a href="#">Конвертер</a></li>
+                    </ul>
+                </div>
+                <div className='footer'>Footer</div>
             </div>
         );
     }

@@ -1,8 +1,17 @@
-header {
+
+
+
+
+
+
+
+
+
+/*header {
 
 
     background: #79a479;
-    position:relative ;  /* добавили */
+    position:relative ;  !* добавили *!
     top: 0;
     height:130px;
     width: 100%;
@@ -33,14 +42,15 @@ li {
     width: 100%;
     text-align: left;
     background: #658565;
-    position:absolute; /* добавили */
-    bottom:0; /* добавили */
+    position:absolute; !* добавили *!
+    bottom:0; !* добавили *!
 }
 
 a:hover {
 
-    background: #466246; /* фон пунктов при наведении */
+    background: #466246; !* фон пунктов при наведении *!
     height: 100%;
     width: 100%;
 
 }
+*/
