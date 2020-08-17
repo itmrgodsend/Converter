@@ -1,25 +1,4 @@
 
-
-
-
-
-
-
-
-
-/*header {
-
-
-    background: #79a479;
-    position:relative ;  !* добавили *!
-    top: 0;
-    height:130px;
-    width: 100%;
-
-
-
-}
-
 a {
     text-decoration: none;
     margin-left: 75px;
@@ -30,27 +9,18 @@ a {
 li {
     display: inline-block;
 
-
-}
-
-.logo {
-    margin-left: 165px;
-    color: azure;
 }
 
 .nav {
-    width: 100%;
     text-align: left;
     background: #658565;
-    position:absolute; !* добавили *!
-    bottom:0; !* добавили *!
+    display: grid;
 }
 
 a:hover {
 
-    background: #466246; !* фон пунктов при наведении *!
-    height: 100%;
-    width: 100%;
+    background: #466246;
+
 
 }
-*/
+

@@ -10,13 +10,8 @@ class App extends React.Component {
         return (
             <div className='wrapper'>
                 <Header/>
-                {/*<h1>Курсfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff</h1>*/}
                 <div className='main'>
-
-                    <ul>
-                        <li><a href="#">Курс</a></li>
-                        <li><a href="#">Конвертер</a></li>
-                    </ul>
+                    <h1>Курс</h1>
                 </div>
                 <div className='footer'>Footer</div>
             </div>
