@@ -10,7 +10,7 @@
             'header header header'
             'main main  main'
             'footer footer footer'   ;
-     grid-template-rows: 100px 1fr 30px;
+     grid-template-rows: 130px 1fr 30px;
      grid-template-columns: 1fr ;
 
 }
@@ -27,21 +27,41 @@
 }
 .logo {
   grid-area: logo;
-  margin-left: 165px;
-  margin-top: 20px;
+  margin-bottom: auto;
+  margin-top: auto;
+  margin-right: auto;
+  margin-left: 150px;
+
   color: azure;
+
 }
 .nav {
   grid-area: nav;
-  text-decoration: none;
   background: #58864b;
+
 }
 
 
 .main {
   grid-area: main;
+  background: #e1f5db;
+  display: grid;
+
+  grid-template-rows: 250px ;
+  grid-template-columns: 25% 25% 25% ;
 
 }
+
+.blocks {
+  border-radius: 5px;
+  background: #a6cd9d;
+  border: 4px solid #8fbc8f;
+  margin: 20px;
+  padding: 20px;
+
+}
+
+
 .footer {
   grid-area: footer;
   background: #d6f6d1;

@@ -1,9 +1,12 @@
 
 a {
     text-decoration: none;
-    margin-left: 75px;
     color: #f6fdff;
-    padding: 16px 16px;
+    padding: 10px 14px;
+    display: grid;
+    align-items: center;
+    margin-left: 80px;
+
 }
 
 li {
@@ -11,16 +14,7 @@ li {
 
 }
 
-.nav {
-    text-align: left;
-    background: #658565;
-    display: grid;
-}
-
 a:hover {
-
     background: #466246;
-
-
 }
 
