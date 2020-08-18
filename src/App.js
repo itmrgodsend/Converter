@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from "./Header/Header";
 import Rate from "./Rate/Rate";
+import Calc from "./Calc/Calc";
 
 
 class App extends React.Component {
@@ -12,7 +13,9 @@ class App extends React.Component {
         return (
             <div className='wrapper'>
                 <Header/>
+                <div className='main'>
                 <Rate/>
+                </div>
                 <div className='footer'>Footer</div>
             </div>
         );
