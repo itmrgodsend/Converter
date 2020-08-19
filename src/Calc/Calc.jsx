@@ -31,19 +31,14 @@ class Calc extends Component {
 
             <div className='calc'>
                 <h3>Calculator</h3>
-
                     <div>I want</div>
-
                     <div>
                         <form onSubmit={this.calcRate}>
                         <input type='number' defaultValue='150' name='count-currency'/>
                         <select name='type-currency' id=''>
                             {Object.keys(this.props.rate).map((keyName, i) =>
                                 (
-
-
                                         <option key={keyName} value={keyName}>{keyName}</option>
-
                                 )
                             )}
                         </select>
