@@ -30,7 +30,7 @@ class Calc extends Component {
 
 
             <div className='calc'>
-                <h3>Calculator</h3>
+                <h3>Конвертер</h3>
                     <div>Обменять на рубли</div>
                     <div>
                         <form onSubmit={this.calcRate}>
