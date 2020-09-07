@@ -41,7 +41,7 @@ class App extends Component {
                 <div className='main'>
                     <main>
                         <Route exact path='/' render={() => <Rate rate={this.state}/>}/>
-                        <Route path='/calc' render={() => <Calc/>}/>
+                        <Route path='/calc' render={() => <Calc rate={this.state}/>}/>
                     </main>
 
                 </div>

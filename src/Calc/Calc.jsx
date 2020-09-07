@@ -11,7 +11,7 @@ class Calc extends Component {
     }
 
     static getDerivedStateFromProps (props, state) {
-        return { rate : props.rate}
+        return { rate : props.rate.currencyRate}
     }
 
     calcRate = (e) => {
@@ -36,7 +36,7 @@ class Calc extends Component {
                         <form onSubmit={this.calcRate}>
                         <input type='number' defaultValue='100' name='count-currency'/>
                         <select name='type-currency' id=''>
-                            {Object.keys(this.props.rate).map((keyName, i) =>
+                            {Object.keys(this.props.rate.currencyRate).map((keyName, i) =>
                                 (
                                         <option key={keyName} value={keyName}>{keyName}</option>
                                 )
