@@ -31,10 +31,10 @@ class Calc extends Component {
 
             <div className='calc'>
                 <h3>Calculator</h3>
-                    <div>I want</div>
+                    <div>Обменять на рубли</div>
                     <div>
                         <form onSubmit={this.calcRate}>
-                        <input type='number' defaultValue='150' name='count-currency'/>
+                        <input type='number' defaultValue='100' name='count-currency'/>
                         <select name='type-currency' id=''>
                             {Object.keys(this.props.rate).map((keyName, i) =>
                                 (
@@ -47,7 +47,7 @@ class Calc extends Component {
                     </div>
                 <h4>Result</h4>
                 <ul className='calc-res'>
-                    <li>EUR {this.state.result}</li>
+                    <li>RUB {this.state.result.toFixed(2)}</li>
 
                 </ul>
             </div>
