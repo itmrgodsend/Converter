@@ -6,13 +6,14 @@ import {Line} from "react-chartjs-2";
 
 const Rate = (props) => {
     const [chartData, setChartData] = useState({});
-    console.log(props.rate.currencyRate)
 
     const chart = () => {
-
-        console.log(this.props.rate.currencyRate)  // НЕ МОГУ ПОЛУЧИТЬ ДАННЫЕ ИЗ БАЗЫ
+        let Array = [];
+        for ( let key in props.rate.data) {
+            Array.push(key)
+        }
         setChartData({
-            labels: [`lol`],
+            labels: Array.sort(),
             datasets: [{
                 label: "Rate",
                 data: [32, 45, 12, 76, 69],
@@ -26,7 +27,7 @@ const Rate = (props) => {
 
     useEffect(() => {
         chart()
-    }, [])
+    }, [props])
 
 
     return (
@@ -42,7 +43,7 @@ const Rate = (props) => {
                         <div key={keyName} className='blocks'>
                             <div>{keyName}</div>
                             <div>{(1 / props.rate.currencyRate[keyName]).toFixed(3)}</div>
-                                <div><Line data={chartData}/></div>
+                            <div><Line data={chartData}/></div>
 
                         </div>
 
