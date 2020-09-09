@@ -5,15 +5,18 @@ import Calc from "./Calc/Calc";
 import {Route, Switch} from "react-router";
 
 
+
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            'data': {},
             'date': '',
             'currencyRate': {}
         }
         this.currency = ['USD', 'EUR', 'CAD']
         this.getRate();
+        this.getResData();
     }
 
     getRate = () => {
@@ -32,6 +35,32 @@ class App extends Component {
                 this.setState({currencyRate: result})
 
             })
+    }
+
+    getResData = () => {
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        let yyyy = today.getFullYear();
+
+        today = yyyy + '-' + mm + '-' + dd;
+        let start = yyyy + '-' + (mm - 1) + '-' + dd;
+        console.log(start, today);
+
+        fetch(`https://api.exchangeratesapi.io/history?start_at=${start}&end_at=${today}`)
+            .then(data => {
+                return data.json()
+            })
+            .then(data => {
+                this.setState({data: data.rates})
+
+                /* for (let lol in this.state.data) {
+                     console.log(lol)
+                 }*/
+            })
+
+        /*let resData = Object.entries(data.rates);
+                  setLol(data.rates);*/
     }
 
     render() {

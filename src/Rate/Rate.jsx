@@ -4,13 +4,15 @@ import Calc from "../Calc/Calc";
 import {Line} from "react-chartjs-2";
 
 
-
 const Rate = (props) => {
     const [chartData, setChartData] = useState({});
+    console.log(props.rate.currencyRate)
 
     const chart = () => {
+
+        console.log(this.props.rate.currencyRate)  // НЕ МОГУ ПОЛУЧИТЬ ДАННЫЕ ИЗ БАЗЫ
         setChartData({
-            labels: ['monday', 'tuesday', 'wednesday', 'thusday', 'friday'],
+            labels: [`lol`],
             datasets: [{
                 label: "Rate",
                 data: [32, 45, 12, 76, 69],
@@ -31,6 +33,7 @@ const Rate = (props) => {
 
 
         <div>
+
             <h3 className='date'>Курс на {props.rate.date}</h3>
             <div className='rate'>
 
@@ -40,10 +43,12 @@ const Rate = (props) => {
                             <div>{keyName}</div>
                             <div>{(1 / props.rate.currencyRate[keyName]).toFixed(3)}</div>
                                 <div><Line data={chartData}/></div>
+
                         </div>
+
                     )
                 )}
-
+                <Line data={chartData}/>
             </div>
         </div>
     );
