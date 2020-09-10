@@ -34,10 +34,10 @@ const Rate = (props) => {
         setChartDataUSD({
             labels: ArrayData.sort(),
             datasets: [{
-                label: "Rate",
+                label: "Курс",
                 data: ArrayRateUSD.sort(),
                 backgroundColor: [
-                    'rgba(75,192,192,0.6)'
+                    '#6a9b5c'
                 ],
                 borderWidth: 4
             }]
@@ -45,10 +45,10 @@ const Rate = (props) => {
         setChartDataEUR({
             labels: ArrayData.sort(),
             datasets: [{
-                label: "Rate",
+                label: "Курс",
                 data: ArrayRateEUR.sort(),
                 backgroundColor: [
-                    'rgba(75,192,192,0.6)'
+                    '#6a9b5c'
                 ],
                 borderWidth: 4
             }]
@@ -56,10 +56,10 @@ const Rate = (props) => {
         setChartDataCAD({
             labels: ArrayData.sort(),
             datasets: [{
-                label: "Rate",
+                label: "Курс",
                 data: ArrayRateCAD.sort(),
                 backgroundColor: [
-                    'rgba(75,192,192,0.6)'
+                    '#6a9b5c'
                 ],
                 borderWidth: 4
             }]
@@ -81,21 +81,20 @@ const Rate = (props) => {
 
 
                 <div key={props.rate.currencyRate} className='blocks'>
-                    <div>USD</div>
+                    <div style={{textAlign: 'center'}}>USD</div>
                     <div>{(1 / props.rate.currencyRate.USD).toFixed(3)}</div>
-                    <div><Line data={chartDataUSD}/></div>
+                    <div className='line' ><Line data={chartDataUSD} options={{responsive: true}}/></div>
                 </div>
                 <div key={props.rate.currencyRate} className='blocks'>
-                    <div>EUR</div>
+                    <div className='RateName'>EUR</div>
                     <div>{(1 / props.rate.currencyRate.EUR).toFixed(3)}</div>
-                    <div><Line data={chartDataEUR}/></div>
+                    <div className='line'><Line data={chartDataEUR} options={{responsive: true}}/></div>
                 </div>
                 <div key={props.rate.currencyRate} className='blocks'>
-                    <div>CAD</div>
+                    <div className='RateName'>CAD</div>
                     <div>{(1 / props.rate.currencyRate.CAD).toFixed(3)}</div>
-                    <div><Line data={chartDataCAD}/></div>
+                    <div ><Line  data={chartDataCAD} options={{responsive: true}}/></div>
                 </div>
-
 
 
             </div>
