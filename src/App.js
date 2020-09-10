@@ -38,29 +38,37 @@ class App extends Component {
     }
 
     getResData = () => {
+
+
         let today = new Date();
         let dd = String(today.getDate()).padStart(2, '0');
         let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
         let yyyy = today.getFullYear();
 
         today = yyyy + '-' + mm + '-' + dd;
-        let start = yyyy + '-' + (mm ) + '-' + (dd - 7);
-        console.log(start, today);
+        let start = yyyy + '-' + (mm ) + '-' + (dd);
 
-        fetch(`https://api.exchangeratesapi.io/history?start_at=${start}&end_at=${today}&base=RUB`)
+        let date = new Date();
+        let yesterday = date - 1000 * 60 * 60 * 24 * 7;
+        date = new Date(yesterday)
+        let ddY = String(date.getDate()).padStart(2, '0');
+        let mmY = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
+        let yyyyY = date.getFullYear();
+
+        date = yyyyY + '-' + mmY + '-' + ddY;
+        console.log(date, today);
+
+
+
+
+        fetch(`https://api.exchangeratesapi.io/history?start_at=${date}&end_at=${today}&base=RUB`)
             .then(data => {
                 return data.json()
             })
             .then(data => {
                 this.setState({data: data.rates})
-
-                /* for (let lol in this.state.data) {
-                     console.log(lol)
-                 }*/
             })
 
-        /*let resData = Object.entries(data.rates);
-                  setLol(data.rates);*/
     }
 
     render() {
