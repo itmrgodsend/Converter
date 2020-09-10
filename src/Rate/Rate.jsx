@@ -1,8 +1,6 @@
-import classes from './Rate.module.css'
-import React, {Component, useEffect, useState} from 'react';
-import Calc from "../Calc/Calc";
+import React, {useEffect, useState} from 'react';
 import {Line} from "react-chartjs-2";
-
+import classes from "./Rate.module.css";
 
 
 const Rate = (props) => {
@@ -76,24 +74,24 @@ const Rate = (props) => {
 
         <div>
 
-            <h3 className='date'>Курс на {props.rate.date}</h3>
+
             <div className='rate'>
 
 
-                <div key={props.rate.currencyRate} className='blocks'>
-                    <div style={{textAlign: 'center'}}>USD</div>
-                    <div>{(1 / props.rate.currencyRate.USD).toFixed(3)}</div>
-                    <div className='line' ><Line data={chartDataUSD} options={{responsive: true}}/></div>
+                <div className='blocks'>
+                    <h3 className={classes.RateName}>USD</h3>
+                    <div className={classes.Rate}>{(1 / props.rate.currencyRate.USD).toFixed(3)}</div>
+                    <div className='line'><Line data={chartDataUSD} options={{responsive: true}}/></div>
                 </div>
-                <div key={props.rate.currencyRate} className='blocks'>
-                    <div className='RateName'>EUR</div>
-                    <div>{(1 / props.rate.currencyRate.EUR).toFixed(3)}</div>
+                <div className='blocks'>
+                    <h3 className={classes.RateName}>EUR</h3>
+                    <div className={classes.Rate}>{(1 / props.rate.currencyRate.EUR).toFixed(3)}</div>
                     <div className='line'><Line data={chartDataEUR} options={{responsive: true}}/></div>
                 </div>
-                <div key={props.rate.currencyRate} className='blocks'>
-                    <div className='RateName'>CAD</div>
-                    <div>{(1 / props.rate.currencyRate.CAD).toFixed(3)}</div>
-                    <div ><Line  data={chartDataCAD} options={{responsive: true}}/></div>
+                <div className='blocks'>
+                    <h3 className={classes.RateName}>CAD</h3>
+                    <div className={classes.Rate}>{(1 / props.rate.currencyRate.CAD).toFixed(3)}</div>
+                    <div><Line data={chartDataCAD} options={{responsive: true}}/></div>
                 </div>
 
 

@@ -1,7 +1,13 @@
 .RateName {
     text-align: center;
+    margin: 10px;
+    color: #315128;
 }
 
-.rate {
+.Rate {
     text-align: center;
+    margin: 20px;
+    font-size: 25px;
+    color: #315128;
 }
+

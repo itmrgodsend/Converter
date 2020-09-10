@@ -56,10 +56,6 @@ class App extends Component {
         let yyyyY = date.getFullYear();
 
         date = yyyyY + '-' + mmY + '-' + ddY;
-        console.log(date, today);
-
-
-
 
         fetch(`https://api.exchangeratesapi.io/history?start_at=${date}&end_at=${today}&base=RUB`)
             .then(data => {
