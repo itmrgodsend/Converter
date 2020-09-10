@@ -2,21 +2,28 @@ import classes from './Rate.module.css'
 import React, {Component, useEffect, useState} from 'react';
 import Calc from "../Calc/Calc";
 import {Line} from "react-chartjs-2";
+import ChartUSD from "./ChartUSD";
 
 
 const Rate = (props) => {
+    let ArrayData = [];
+    for (let key in props.rate.data) {
+        ArrayData.push(key)
+    }
     const [chartData, setChartData] = useState({});
 
     const chart = () => {
-        let Array = [];
-        for ( let key in props.rate.data) {
-            Array.push(key)
+        let Arr = Object.entries(props.rate.data);
+        let ArrayRate = [];
+        for (let i = 0; i < Arr.length; i++) {
+            ArrayRate.push((1 / Arr[i][1].USD).toFixed(3))
         }
+
         setChartData({
-            labels: Array.sort(),
+            labels: ArrayData.sort(),
             datasets: [{
                 label: "Rate",
-                data: [32, 45, 12, 76, 69],
+                data: ArrayRate.sort(),
                 backgroundColor: [
                     'rgba(75,192,192,0.6)'
                 ],
@@ -38,17 +45,20 @@ const Rate = (props) => {
             <h3 className='date'>Курс на {props.rate.date}</h3>
             <div className='rate'>
 
-                {Object.keys(props.rate.currencyRate).map((keyName, i) =>
-                    (
-                        <div key={keyName} className='blocks'>
-                            <div>{keyName}</div>
-                            <div>{(1 / props.rate.currencyRate[keyName]).toFixed(3)}</div>
-                            <div><Line data={chartData}/></div>
 
-                        </div>
+                <ChartUSD Chart={props.rate}/>
+                <div key={props.rate.currencyRate} className='blocks'>
+                    <div>EUR</div>
+                    <div>{(1 / props.rate.currencyRate.EUR).toFixed(3)}</div>
+                    <div><Line data={chartData}/></div>
+                </div>
+                <div key={props.rate.currencyRate} className='blocks'>
+                    <div>CAD</div>
+                    <div>{(1 / props.rate.currencyRate.CAD).toFixed(3)}</div>
+                    <div><Line data={chartData}/></div>
+                </div>
 
-                    )
-                )}
+
                 <Line data={chartData}/>
             </div>
         </div>

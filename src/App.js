@@ -44,10 +44,10 @@ class App extends Component {
         let yyyy = today.getFullYear();
 
         today = yyyy + '-' + mm + '-' + dd;
-        let start = yyyy + '-' + (mm - 1) + '-' + dd;
+        let start = yyyy + '-' + (mm ) + '-' + (dd - 7);
         console.log(start, today);
 
-        fetch(`https://api.exchangeratesapi.io/history?start_at=${start}&end_at=${today}`)
+        fetch(`https://api.exchangeratesapi.io/history?start_at=${start}&end_at=${today}&base=RUB`)
             .then(data => {
                 return data.json()
             })
