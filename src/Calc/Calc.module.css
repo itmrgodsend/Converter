@@ -1,0 +1,41 @@
+
+.Input {
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #e5f3e0 ;
+    border-radius: 3px;
+    height: 25px;
+    width: 100px;
+    border-color: #406640;
+}
+
+.Select {
+ background-color: #e5f3e0;
+    border-color: #406640;
+    border-radius: 3px;
+    border-width: 2px;
+    height: 25px;
+    width: 55px;
+}
+
+.Button {
+    background-color: #e5f3e0 !important;
+    border-width: 2px !important;
+    border-color: #406640 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

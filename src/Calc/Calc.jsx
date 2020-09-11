@@ -1,5 +1,9 @@
-import classes from './Calc.module.css'
+import styles from './Calc.module.css'
 import React, {Component} from 'react';
+import Input from "@material-ui/core/Input";
+import {Button} from "@material-ui/core";
+import Select from "@material-ui/core/Select";
+import InputLabel from "@material-ui/core/InputLabel";
 
 
 class Calc extends Component {
@@ -34,15 +38,14 @@ class Calc extends Component {
                     <div>Обменять на рубли</div>
                     <div>
                         <form onSubmit={this.calcRate}>
-                        <input type='number' defaultValue='100' name='count-currency'/>
-                        <select name='type-currency' id=''>
+                        <select  className={styles.Select} name='type-currency' id='' >
                             {Object.keys(this.props.rate.currencyRate).map((keyName, i) =>
-                                (
-                                        <option key={keyName} value={keyName}>{keyName}</option>
-                                )
+                                (<option key={keyName} value={keyName}>{keyName}</option>)
                             )}
                         </select>
-                            <input type='submit' defaultValue='calc'/>
+
+                           <input className={styles.Input} type='number' defaultValue='100' name='count-currency'></input>
+                            <Button className={styles.Button} variant="outlined"  type='submit' defaultValue='calc'>Расчёт</Button>
                         </form>
                     </div>
                 <h4>Result</h4>

@@ -75,13 +75,14 @@
     border-radius: 3px;
     background: #d5ead0;
     border: 2px solid #a7cba7;
-    margin-top: 25px;
+    margin-top: 55px;
     margin-bottom: 50px;
-    margin-right: 80px;
-    margin-left: 80px;
+    margin-right: auto;
+    margin-left: auto;
     padding: 20px;
-    width: 350px;
+    width: 450px;
     height: 250px;
+    text-align: center;
 
 }
 
