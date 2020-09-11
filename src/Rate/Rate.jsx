@@ -28,12 +28,13 @@ const Rate = (props) => {
         for (let i = 0; i < ArrCAD.length; i++) {
             ArrayRateCAD.push((1 / ArrCAD[i][1].CAD).toFixed(3))
         }
+        console.log(ArrayRateUSD.reverse())
 
         setChartDataUSD({
             labels: ArrayData.sort(),
             datasets: [{
                 label: "Курс",
-                data: ArrayRateUSD.sort(),
+                data: ArrayRateUSD.sort().reverse(),
                 backgroundColor: [
                     '#6a9b5c'
                 ],
@@ -44,7 +45,7 @@ const Rate = (props) => {
             labels: ArrayData.sort(),
             datasets: [{
                 label: "Курс",
-                data: ArrayRateEUR.sort(),
+                data: ArrayRateEUR.sort().reverse(),
                 backgroundColor: [
                     '#6a9b5c'
                 ],
@@ -55,7 +56,7 @@ const Rate = (props) => {
             labels: ArrayData.sort(),
             datasets: [{
                 label: "Курс",
-                data: ArrayRateCAD.sort(),
+                data: ArrayRateCAD.sort().reverse(),
                 backgroundColor: [
                     '#6a9b5c'
                 ],
